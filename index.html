@@ -1,0 +1,38 @@
+<head>
+<title>SQUARE</title>
+</head>
+
+
+<script>
+	function mousetouch() {
+	var heightva = Math.floor(Math.random() * window.innerHeight) + 1;
+	var widthva = Math.floor(Math.random() * window.innerWidth) + 1;
+		document.getElementById('square').style.top = heightva + "px";
+		document.getElementById('square').style.left = widthva + "px";
+		if (heightva >= window.innerHeight - 50) {
+			mousetouch();
+		}
+		if (widthva >= window.innerWidth - 50) {
+			mousetouch();
+		}
+	}
+	function squareclick() {
+		document.getElementById('title').innerHTML = "YOU CLICKED THE SQUARE!";
+	}
+</script>
+
+
+<style>
+.square {
+	background-color: red;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+}
+</style>
+
+
+<body>
+	<h1 id="title">CLICK THE SQUARE</h1>
+	<div id="square" class="square" onmouseover="mousetouch()" onmousedown="squareclick()"></div>
+</body>
